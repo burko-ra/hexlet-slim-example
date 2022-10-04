@@ -1,0 +1,15 @@
+<form action="/login" method="post">
+    <div>
+        <label>
+            Email
+            <input type="text" name="user[email]" value="<?= $user['email'] ?>">
+        </label>
+        <?php if (isset($errors['email'])) : ?>
+            <div>
+                <?= $errors['email'] ?>
+            </div>
+        <?php endif ?>
+    </div>
+    <input type="submit" value="Log in">
+</form>
+

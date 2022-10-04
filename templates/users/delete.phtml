@@ -1,0 +1,10 @@
+<form action="/users/<?= $user['id'] ?>" method="post">
+    <div>
+        Вы уверены, что хотите удалить профиль?
+    </div>
+    <input type="hidden" name="_METHOD" value="DELETE">
+    <input type="submit" value="Remove">
+</form>
+<div>
+    <a href="/users/<?= $user['id'] ?>">Назад</a>
+</div>

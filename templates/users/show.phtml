@@ -1,0 +1,12 @@
+<?php
+
+$name = htmlspecialchars($user['name']);
+$email = htmlspecialchars($user['email']);
+
+?>
+
+<h1><?= $name ?></h1>
+<h1><?= $email ?></h1>
+
+<a href="/users">К списку пользователей</a>
+<a href="/users/<?= $user['id'] ?>/edit">Редактировать профиль</a>
