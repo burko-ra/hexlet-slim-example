@@ -204,7 +204,7 @@ $app->get('/users/{id}/delete', function ($request, $response, array $args) {
     return $this->get('renderer')->render($response, 'users/delete.phtml', $params);
 });
 
-$app->delete('/users/{id}', function ($request, $response, array $args) {
+$app->delete('/users/{id}', function ($request, $response, array $args) use ($router) {
     $id = $args['id'];
 
     $users = $_SESSION['users'] ?? [];
@@ -222,7 +222,7 @@ $app->delete('/users/{id}', function ($request, $response, array $args) {
     
     $_SESSION['users'] = $users;
     $this->get('flash')->addMessage('success', 'User was removed successfully');
-    return $response->withRedirect("/users", 302);
+    return $response->withRedirect($router->urlFor('users'), 302);
 });
 
 $app->run();
